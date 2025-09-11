@@ -9,7 +9,7 @@ console.log('Importing module');
 // ShoppingCart.addtoCart('bread', 5);
 // console.log(ShoppingCart.totalPrice);
 
-import add, { cart } from './shoppingCart.js'; // this imports the default export
+import add, { addtoCart, cart } from './shoppingCart.js'; // this imports the default export
 add('pizza', 2);
 add('bread', 5);
 add('apples', 4);
@@ -37,3 +37,27 @@ console.log(lastPost);
 // lastPost.then(last => console.log(last));
 const lastPost2 = await getLastPost();
 console.log(lastPost2);
+
+const ShoppingCart2 = (function () {
+  const cart = [];
+  const shippingCost = 10;
+  const totalPrice = 237;
+  const totalQuantity = 23;
+
+  const orderStock = (product, quantity) => {
+    cart.push({ product, quantity });
+    console.log(`${quantity} ${product} ordered from supplier`);
+  };
+
+  return {
+    addtoCart,
+    cart,
+    totalPrice,
+    totalQuantity,
+  };
+})();
+
+ShoppingCart2.addtoCart('apple', 4);
+ShoppingCart2.addtoCart('pizza', 2);
+console.log(ShoppingCart2);
+console.log(ShoppingCart2.shippingCost);
