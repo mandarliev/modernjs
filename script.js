@@ -60,4 +60,4 @@ const ShoppingCart2 = (function () {
 ShoppingCart2.addtoCart('apple', 4);
 ShoppingCart2.addtoCart('pizza', 2);
 console.log(ShoppingCart2);
-console.log(ShoppingCart2.shippingCost);
+console.log(ShoppingCart2.shippingCost); // closure
