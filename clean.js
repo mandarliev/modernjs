@@ -82,6 +82,7 @@ console.log(finalBudget);
 //   console.log(output);
 // };
 
+// Impure
 const logBigExpenses = (state, bigLimit) => {
   const bigExpenses = state
     .filter(entry => entry.value <= -bigLimit)
